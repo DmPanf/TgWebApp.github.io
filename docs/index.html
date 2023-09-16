@@ -40,11 +40,22 @@
     <img id="image" src="https://raw.githubusercontent.com/DmPanf/DokuWiki/main/images/00.jpg" alt="Загружаемое изображение на сайте" style="width: 98%; max-width: 640px; height: auto; max-height: 480px;">
     <br><button id="start">♻️ RELOAD</button>
   </div>
-  <script>
-    document.getElementById("start").addEventListener("click", function() {
-      var newImageUrl = "https://raw.githubusercontent.com/DmPanf/TgWebApp.github.io/main/docs/b02.jpg";
-      document.getElementById("image").src = newImageUrl;
-    });
-  </script>
+<script>
+  let currentImage = 1;  // Initialize with 1 to indicate the first image is shown
+  document.getElementById("start").addEventListener("click", function() {
+    let imageElement = document.getElementById("image");
+    
+    if (currentImage === 1) {
+      imageElement.src = "https://raw.githubusercontent.com/DmPanf/TgWebApp.github.io/main/docs/b02.jpg";
+      currentImage = 2;  // Switch to indicate the second image
+    } else {
+      imageElement.src = "https://raw.githubusercontent.com/DmPanf/DokuWiki/main/images/00.jpg";
+      currentImage = 1;  // Switch back to indicate the first image
+    }
+
+    let tg = window.Telegram.WebApp; //получаем объект webapp телеграма 
+    tg.expand(); //расширяем на все окно
+  });
+</script>
 </body>
 </html>
