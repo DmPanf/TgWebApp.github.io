@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Пример HTML страницы</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
 </head>
 <body>
   <div is="main">
